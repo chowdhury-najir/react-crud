@@ -10,13 +10,14 @@ import Dashboard from '../components/Dashboard'
 
 import { Container, Row, Col } from "react-bootstrap";
 import SidebarAnt from '../layouts/partials/SidebarAnt'
+import BasicSidebar from './partials/BasicSidebar'
 
      const MasterLayout = ({children, ...rest}) => {
          return (
             <div>
             <Header />
             
-            <SidebarAnt />
+            <BasicSidebar />
             
            
                {children}
