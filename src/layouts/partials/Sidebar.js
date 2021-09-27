@@ -35,19 +35,31 @@ export default class Sidebar extends Component {
                                 <i className="icon ion-ios-gear-outline"></i>
                                 <span>Forms</span>
                             </Link>
+                            <ul className="nav kt-sideleft-menu">
+                                <li className="nav-item"><Link to="form-elements" className="nav-link with-sub">
+                                    <i className="icon ion-ios-gear-outline"></i>
+                                    <span>Test1</span>
+                                </Link>
+                                    <ul className="nav-sub">
+                                        <li className="nav-item"><Link to="accordion" className="nav-link">Accordion</Link></li>
+                                        <li className="nav-item"><Link to="alerts" className="nav-link">Alerts</Link></li>
+                                        <li className="nav-item"><Link to="buttons" className="nav-link">Buttons</Link></li>
+                                        <li className="nav-item"><Link to="cards" className="nav-link">Cards</Link></li>
+                                    </ul>
+                                </li>
+                                <li className="nav-item"><Link to="form-elements" className="nav-link with-sub">
+                                    <i className="icon ion-ios-gear-outline"></i>
+                                    <span>Test1</span>
+                                </Link>
 
-                            {/* another subChildlist will goes there */}
-
-                            <ul className="nav-sub">
-                                <li className="nav-item"><Link to="form-elements" className="nav-link">Form Elements</Link></li>
+                                </li>
+                            </ul>
                                 <li className="nav-item"><Link to="form-layouts" className="nav-link">Form Layouts</Link></li>
                                 <li className="nav-item"><Link to="form-validation" className="nav-link">Form Validation</Link></li>
-
-                                {/* //start inserting into this block */}
-                               
-                                {/* //start inserting into this block */}
-                            </ul>
+                            
+                            
                         </li>
+                        
                         <li className="nav-item">
                             <Link to="" className="nav-link with-sub">
                                 <i className="icon ion-ios-filing-outline"></i>

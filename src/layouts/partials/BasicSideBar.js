@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom';
 import { sidebarData } from './sidebarData';
-import { Link } from "react-router-dom";
 
 const BasicSidebar = () => {
     const [navData, setNavData] = useState([]);
@@ -10,80 +10,74 @@ const BasicSidebar = () => {
     }, []);
 
     return (
-        <>
-         <div class="kt-sideleft-header">
-                    <div class="kt-logo"><Link to="index">React js</Link></div>
-                    <div id="ktDate" class="kt-date-today"></div>
-                    <div class="input-group kt-input-search">
-                        <input type="text" class="form-control" placeholder="Search..." />
-                        <span class="input-group-btn mg-0">
-                            <button class="btn"><i class="fa fa-search"></i></button>
-                        </span>
-                    </div>
-                </div>
-        
-            <div className="kt-sideleft">
+        <div class="kt-sideleft">
+        <ul className="nav kt-sideleft-menu">
+   
+            {navData.map((tab) => (
+                <li className="nav-item" key={tab.id}>
+                    <Link  to="" className="nav-link with-sub" >
+                    <i className="icon ion-ios-gear-outline"></i>
+                         {tab.name}
+                     </Link>
+                     {
+                    
+                     <ul className="nav kt-sideleft-menu">
+                        {tab.childData &&
+                            tab.childData.map((child) => (
 
-                {
-                    navData.map((tab) => (
-                        <ul className="nav kt-sideleft-menu">
-                            <li className="nav-item">
-                                <Link to="/forms" className="nav-link with-sub" >
-                                    <i className="icon ion-ios-home-outline"></i>
-                                    <span>{tab.name}</span>
-                                </Link>
-                                {
-                                    tab.childData &&
-                                    tab.childData.map((child) => (
-                                        <>
-                                        {
-                                            
-                                            !child.subChildData ?
-                                            <ul className="nav-sub">
-                                                <li className="nav-item">
-                                                <Link to="form-elements" className="nav-link">{child.name}</Link>
+                                child.subChildData ?  
+                                <li className= "nav-item" key={child.id}>
+                                    <Link  to = "" className = "nav-link with-sub">
+                                    <i className="icon ion-ios-gear-outline"></i>
+                                    {child.name}     
+                                    </Link> 
+                                    <ul className = "nav-sub">
+                                        {child.subChildData &&
+                                            child.subChildData.map((subChild) => (
+                                                <li  className="nav-item" key={subChild.id}>
+                                                    <Link  to={subChild.url} className="nav-link " >
+
+                                                        {subChild.name}
+                                                     </Link>  
                                                 </li>
-                                            </ul>
-                                            :
-                                            <ul className="nav kt-sideleft-menu">
-                                                    <li className="nav-item">
-                                                    <Link to="" className="nav-link with-sub">
-                                                        <i className="icon ion-ios-filing-outline"></i>
-                                                        <span>{child.name}</span>
-                                                    </Link>
-                                                    </li>
+                                            ))}
+                                    </ul>
+                                </li> :
+                                <li className = "nav-item" key={child.id}>
+                                    <Link  to={child.url} className="nav-link " >
+                                         {child.name}
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul> 
+                        // <li className = "nav-item">
+                        // {tab.childData &&
+                        //     tab.childData.map((child) => (
+                        //         <li className= "nav-item" key={child.id}>
+                        //             {child.name}      
+                        //             <ul className = "nav-sub">
+                        //                 {child.subChildData &&
+                        //                     child.subChildData.map((subChild) => (
+                        //                         <li  className="nav-item" key={subChild.id}>
+                        //                             <Link  to="" className="nav-link " >
+                        //                                 <i className="icon ion-ios-gear-outline"></i>
+                        //                                 {subChild.name}
+                        //                              </Link>  
+                        //                         </li>
+                        //                     ))}
+                        //             </ul>
+                        //         </li>
+                        //     ))}
+                        // </li>
+                        
 
-                                                {
-                                                    
-                                                    child.subChildData &&
-                                                    child.subChildData.map((subchild) => (
-                                                        <ul className="nav-link with-sub">
-                                                            <li className="nav-item">
-                                                            <Link to="" className="nav-sub">
-                                                                    <i className="icon ion-ios-gear-outline"></i>
-                                                                    <span>{subchild.name}</span>
-                                                            </Link>
-                                                                
-                                                            </li>
-                                                        </ul>
-
-                                                    ))
-                                                }
-                                            </ul>
-                                        }
-                                        </>
-                                     ))
-                                 }  
-
-                            </li>
-
-                        </ul>
-
-                    ))
-                }
-            </div>
-        </>
+                     }
+                </li>
+            ))}
+        </ul>
+    </div>
+            
     )
 }
 
-export default BasicSidebar
+export default BasicSidebar;
