@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component,useState } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import Header from '../layouts/partials/Header'
 import Footer from '../layouts/partials/Footer'
@@ -8,23 +8,38 @@ import Dashboard from '../components/Dashboard'
 
 
 
+
+
 import { Container, Row, Col } from "react-bootstrap";
 import SidebarAnt from '../layouts/partials/SidebarAnt'
 import BasicSidebar from './partials/BasicSidebar'
 
      const MasterLayout = ({children, ...rest}) => {
+         console.log(children.props);
+         const [state, setState] = useState({data: [{
+            tab: 'Dashboard', 
+            component: <Dashboard />, 
+            id: 0, 
+            closeable: true
+        }]})
          return (
-            <div>
-            <Header />
+             <>
             
-            <BasicSidebar />
-            
-           
-               {children}
-        
-            
-            <Footer />
+            <Header></Header>
+            <Sidebar></Sidebar>
+            <div className = " kt-mainpanel" >
+            <CloseableTabs tabPanelColor='lightgray' data={state.data} onCloseTab={(id, newIndex) => {
+                setState({
+                data: state.data.filter(item => item.id !== id),
+                activeIndex: newIndex
+                });
+            }}
+            activeIndex={state.activeIndex}
+        />
+        <Footer />
         </div>
+            </>
+            
          )
      }
 

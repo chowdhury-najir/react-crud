@@ -22,7 +22,7 @@ const Routes = (props) => (
     
     
     <Switch>
-    <MasterLayoutRoute exact path = "/" component = {FormLayout} />
+    <MasterLayoutRoute exact path = "/" component = {Dashboard} />
       <MasterLayoutRoute exact path = "/form-layouts" component = {FormLayout} />
       <MasterLayoutRoute exact path = "/form-elements" component = {FormElements} />
       <MasterLayoutRoute exact path = "/debit" component = {Debit} />

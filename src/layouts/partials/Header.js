@@ -37,7 +37,7 @@ export default class Header extends Component {
                 <a class="breadcrumb-item" href="index.html">Katniss</a>
                 <span class="breadcrumb-item active">Dash</span>
               </nav>
-            </div> {/* */}
+            </div> 
           </div>
          </div> 
       
