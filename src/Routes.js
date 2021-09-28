@@ -2,17 +2,13 @@ import React from "react";
 import { Route, BrowserRouter as Router, Switch, Redirect, } from "react-router-dom";
 
 import Dashboard from "./components/Dashboard"
-import FormLayout from "./components/FormLayout"
+import FormLayouts from "./components/FormLayouts"
 import FormElements from "./components/FormElements"
-import Card from "./components/Card"
+import Cards from "./components/Cards"
 import Debit from "./components/Debit"
 import Credit from "./components/Credit"
 
-import MasterLayout from "./layouts/MasterLayout"
-import Sidebar from "./layouts/partials/Sidebar";
-import Header from "./layouts/partials/Header";
-import Footer from "./layouts/partials/Footer";
-import MasterLayoutRoute from "./layouts/MasterLayout";
+import MasterLayoutRoute from "./layouts/MasterLayoutClass";
 
 
 
@@ -23,11 +19,11 @@ const Routes = (props) => (
     
     <Switch>
     <MasterLayoutRoute exact path = "/" component = {Dashboard} />
-      <MasterLayoutRoute exact path = "/form-layouts" component = {FormLayout} />
-      <MasterLayoutRoute exact path = "/form-elements" component = {FormElements} />
-      <MasterLayoutRoute exact path = "/debit" component = {Debit} />
-      <MasterLayoutRoute exact path = "/credit" component = {Credit} />
-      <MasterLayoutRoute exact path = "/cards" component = {Card} />
+      <MasterLayoutRoute exact path = "/FormLayouts" component = {FormLayouts} />
+      <MasterLayoutRoute exact path = "/FormElements" component = {FormElements} />
+      <MasterLayoutRoute exact path = "/Debit" component = {Debit} />
+      <MasterLayoutRoute exact path = "/Credit" component = {Credit} />
+      <MasterLayoutRoute exact path = "/Cards" component = {Cards} />
 
     {/* <Route exact path = "/form-layouts" >
       <FormLayout />

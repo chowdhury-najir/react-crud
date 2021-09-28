@@ -9,10 +9,11 @@ export default class Sidebar extends Component {
     return (
         <>
 
-<div class="kt-mainpanel">
+{/* <div class="kt-mainpanel">
+     
       <div class="kt-pagetitle">
         <h5>Form Layouts</h5>
-      </div>
+      </div> */}
 
 <div class="kt-pagebody">
 
@@ -67,7 +68,7 @@ export default class Sidebar extends Component {
     </div>
   </div>
 </div>
-</div>
+{/* </div> */}
 </>
 
 )

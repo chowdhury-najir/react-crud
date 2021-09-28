@@ -27,7 +27,7 @@ const BasicSidebar = () => {
 
                                 child.subChildData ?  
                                 <li className= "nav-item" key={child.id}>
-                                    <Link  to = "" className = "nav-link with-sub">
+                                    <Link  to = {child.url} className = "nav-link with-sub">
                                     <i className="icon ion-ios-gear-outline"></i>
                                     {child.name}     
                                     </Link> 
