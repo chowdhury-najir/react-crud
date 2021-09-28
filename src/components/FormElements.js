@@ -6,10 +6,10 @@ function  FormElements(){
   return (
     <>
 
-<div class="kt-mainpanel">
+{/* <div class="kt-mainpanel">
       <div class="kt-pagetitle">
         <h5>Form Elements</h5>
-      </div>
+      </div> */}
 
 <div class="kt-pagebody">
 
@@ -64,7 +64,7 @@ function  FormElements(){
     </div>
   </div>
 </div>
-</div>
+{/* </div> */}
 </>
 
   );

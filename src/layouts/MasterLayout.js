@@ -6,11 +6,12 @@ import Sidebar from '../layouts/partials/Sidebar'
 import CloseableTabs from 'react-closeable-tabs'
 import Dashboard from '../components/Dashboard'
 import Cards from '../components/Card'
+import FormElements from '../components/FormElements'
 
 
 
 
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import SidebarAnt from '../layouts/partials/SidebarAnt'
 import BasicSidebar from './partials/BasicSidebar'
 
@@ -20,11 +21,17 @@ import BasicSidebar from './partials/BasicSidebar'
             tab: 'Dashboard', 
             component: <Dashboard />, 
             id: 0, 
-            closeable: true
+            closeable: false
         },{
             tab: 'cards',
             component: <Cards />,
             id: 1,
+            closeable: true
+          },
+          {
+            tab: 'form-element',
+            component: <FormElements />,
+            id: 2,
             closeable: true
           }
     ]})
