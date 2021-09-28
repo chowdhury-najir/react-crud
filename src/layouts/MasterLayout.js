@@ -5,7 +5,7 @@ import Footer from '../layouts/partials/Footer'
 import Sidebar from '../layouts/partials/Sidebar'
 import CloseableTabs from 'react-closeable-tabs'
 import Dashboard from '../components/Dashboard'
-
+import Cards from '../components/Card'
 
 
 
@@ -21,7 +21,13 @@ import BasicSidebar from './partials/BasicSidebar'
             component: <Dashboard />, 
             id: 0, 
             closeable: true
-        }]})
+        },{
+            tab: 'cards',
+            component: <Cards />,
+            id: 1,
+            closeable: true
+          }
+    ]})
          return (
              <>
             
@@ -36,8 +42,9 @@ import BasicSidebar from './partials/BasicSidebar'
             }}
             activeIndex={state.activeIndex}
         />
-        <Footer />
+        
         </div>
+        <Footer />
             </>
             
          )

@@ -4,13 +4,7 @@ function  Card(){
 
 
   return (
-    <>
-
-<div class="kt-mainpanel">
-  <div class="kt-pagetitle">
-    <h5>Form Elements</h5>
-  </div>
-
+  
   <div class="kt-pagebody">
 
     <div class="card pd-20 pd-sm-40">
@@ -41,8 +35,8 @@ function  Card(){
 
     </div>
   </div>
-</div>
-</>
+
+
 
   );
 }
