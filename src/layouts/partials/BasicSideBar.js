@@ -36,7 +36,6 @@ const BasicSidebar = () => {
                                             child.subChildData.map((subChild) => (
                                                 <li  className="nav-item" key={subChild.id}>
                                                     <Link  to={subChild.url} className="nav-link " >
-
                                                         {subChild.name}
                                                      </Link>  
                                                 </li>

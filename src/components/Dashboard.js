@@ -10,8 +10,13 @@ import { Link } from "react-router-dom"
     render() {
         return (
           
-          <div class="kt-pagebody">
-            Credit : 10000 tk
+          <div className="kt-pagebody">
+            <div className = "card">
+            <h4>This is Dashboard Content</h4>
+            <p>
+              React js
+            </p>
+          </div>
           </div>
         
         

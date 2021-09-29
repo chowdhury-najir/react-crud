@@ -9,30 +9,31 @@ export const sidebarData = [
   {
     id: 2,
     name: "Audit",
+    url : "/Audit",
     childData: [
       {
         id: 1,
         name: "Audit Type",
-        url : "/audit-type",
+        url : "/AuditType",
         subChildData: [
-          { id: 1, name: "internal-audit" , url : "/internal-audit" },
-          { id: 2, name: "external-audit" , url : "/external-audit"},
+          { id: 1, name: "InternalAudit" , url : "/InternalAudit" },
+          { id: 2, name: "external-audit" , url : "/ExternalAudit"},
         ],
       },
-      { id: 2, name: "Audit History",  url : "/audit-history"},
+      { id: 2, name: "AuditHistory",  url : "/AuditHistory"},
     ],
   },
   {
     id: 3,
     name: "Accounts",
-    url : "/accounts",
+    url : "/Accounts",
     childData: [
       {
         id: 1, name: "income",
         url : "/income",
          subChildData: [
-          { id: 1, name: "debit" ,url : "/Debit"},
-          { id: 2, name: "credit", url : "/Credit" },
+          { id: 1, name: "Debit" ,url : "/Debit"},
+          { id: 2, name: "Credit", url : "/Credit" },
         ],
       },
       { id: 2, name: "Journel 2" ,url : "/Cards" },

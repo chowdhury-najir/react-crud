@@ -2,18 +2,18 @@ import React, { Component,useState,useEffect } from 'react'
 import { Route, Redirect } from 'react-router-dom'
 import Header from './partials/Header'
 import Footer from './partials/Footer'
-import Sidebar from './partials/Sidebar'
 import CloseableTabs from 'react-closeable-tabs'
 import Dashboard from '../components/Dashboard'
 import Cards from '../components/Cards'
 import FormElements from '../components/FormElements'
 import FormLayouts from '../components/FormLayouts'
+import Audit from "../components/Audit";
+import AuditHistory from "../components/AuditHistory";
+import AuditType from "../components/AuditType";
+import ExternalAudit from "../components/ExternalAudit";
+import InternalAudit from "../components/InternalAudit";
 
 
-
-
-import { Container, Row, Col, Card } from "react-bootstrap";
-import SidebarAnt from './partials/SidebarAnt'
 import BasicSidebar from './partials/BasicSidebar'
 
 
@@ -21,7 +21,12 @@ import BasicSidebar from './partials/BasicSidebar'
 const allComponents = {
     Cards : Cards,
     FormElements : FormElements,
-    FormLayouts : FormLayouts
+    FormLayouts : FormLayouts,
+    Audit : Audit,
+    AuditHistory : AuditHistory,
+    AuditType : AuditType,
+    InternalAudit : InternalAudit,
+    ExternalAudit : ExternalAudit
 };
 
 class MasterClass extends Component {
@@ -43,7 +48,7 @@ class MasterClass extends Component {
         for(let i = 0; i < this.state.list.length; i++) {
             if (this.state.list[i].tab === componentdisplayname) {
                 indexNumber = i;
-                console.log(indexNumber);
+                alert(indexNumber);
                 break;
             }
         }
