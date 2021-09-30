@@ -3,7 +3,7 @@ $(function(){
 
 
   var bar1 = new Rickshaw.Graph({
-    element: document.querySelector('#chartBar1'),
+    element: document.getElementById('#chartBar1'),
     renderer: 'bar',
     max: 80,
     series: [{
@@ -41,7 +41,7 @@ $(function(){
   /*********************** BAR 2 *********************/
 
   var bar2 = new Rickshaw.Graph({
-    element: document.querySelector('#chartBar2'),
+    element: document.getElementById('#chartBar2'),
     renderer: 'bar',
     max: 80,
     series: [{
@@ -80,7 +80,7 @@ $(function(){
   /************* STACKED BAR1 *************/
 
   var stacked1 = new Rickshaw.Graph({
-    element: document.querySelector('#chartStackedBar1'),
+    element: document.getElementById('#chartStackedBar1'),
     renderer: 'bar',
     max: 100,
     series: [{
@@ -155,7 +155,7 @@ $(function(){
 
   /*************** STACKED 2 **********************/
   var stacked2 = new Rickshaw.Graph({
-    element: document.querySelector('#chartStackedBar2'),
+    element: document.getElementById('#chartStackedBar2'),
     renderer: 'bar',
     max: 100,
     series: [{
@@ -231,7 +231,7 @@ $(function(){
   /***************** MULTIPLE BOX ********************/
 
   var multibar = new Rickshaw.Graph({
-    element: document.querySelector('#chartMultiBar1'),
+    element: document.getElementById('#chartMultiBar1'),
     renderer: 'bar',
     stack: false,
     max: 60,
@@ -280,7 +280,7 @@ $(function(){
   /**************** MULTI BAR 2 ***************/
 
   var multibar2 = new Rickshaw.Graph({
-    element: document.querySelector('#chartMultiBar2'),
+    element: document.getElementById('#chartMultiBar2'),
     renderer: 'bar',
     stack: false,
     max: 60,
@@ -342,7 +342,7 @@ $(function(){
   /*************** LINE BAR 1 *****************/
 
   var line1 = new Rickshaw.Graph({
-    element: document.querySelector('#chartLine1'),
+    element: document.getElementById('#chartLine1'),
     renderer: 'line',
     max: 80,
     series: [{
@@ -380,7 +380,7 @@ $(function(){
   /***************** LINE CHART 2 **********************/
 
   var line2 = new Rickshaw.Graph({
-    element: document.querySelector('#chartLine2'),
+    element: document.getElementById('#chartLine2'),
     renderer: 'line',
     stack: false,
     max: 60,
@@ -428,7 +428,7 @@ $(function(){
   /******************** AREA CHART 1 ******************/
 
   var area1 = new Rickshaw.Graph({
-    element: document.querySelector('#chartArea1'),
+    element: document.getElementById('#chartArea1'),
     renderer: 'area',
     max: 80,
     series: [{
@@ -465,7 +465,7 @@ $(function(){
 
   /****************** AREA CHART 2 ******************/
   var area2 = new Rickshaw.Graph({
-    element: document.querySelector('#chartArea2'),
+    element: document.getElementById('#chartArea2'),
     renderer: 'area',
     stack: false,
     max: 80,

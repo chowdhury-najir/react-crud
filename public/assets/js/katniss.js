@@ -23,7 +23,8 @@
    });
 
    // hiding all sub nav in left sidebar by default.
-   $('.nav-sub').slideUp();
+   $('.nav-sub ').slideUp();
+   $('.nav-sub-sub ').slideUp();    //fixed bug by adding this line the child with subchild are initially slided up
 
    // showing sub navigation to nav with sub nav.
    $('.with-sub.active + .nav-sub').slideDown();
@@ -36,7 +37,10 @@
      if(!nextElem.is(':visible')) {
        $('.nav-sub').slideUp();
      }
-     nextElem.slideToggle();
+     
+    //   $('.nav-sub').slideDown();
+    //  }
+      nextElem.slideToggle();
    });
 
    // showing and hiding left sidebar

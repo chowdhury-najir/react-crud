@@ -63,12 +63,12 @@ export default class Header extends Component {
           </div> {/*<!-- dropdown-menu --> */}
         </div>
 
-            <div class="kt-breadcrumb">
+            {/* <div class="kt-breadcrumb">
               <nav class="breadcrumb">
                 <a class="breadcrumb-item" href="index.html">Katniss</a>
                 <span class="breadcrumb-item active">Dash</span>
               </nav>
-            </div> 
+            </div>  */}
           </div>
          </div> 
          </>

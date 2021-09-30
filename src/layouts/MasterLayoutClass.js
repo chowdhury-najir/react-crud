@@ -12,9 +12,13 @@ import AuditHistory from "../components/AuditHistory";
 import AuditType from "../components/AuditType";
 import ExternalAudit from "../components/ExternalAudit";
 import InternalAudit from "../components/InternalAudit";
+import Debit from "../components/Debit";
+import Credit from "../components/Credit";
 
 
-import BasicSidebar from './partials/BasicSidebar'
+
+
+import Sidebar from './partials/Sidebar'
 
 
 
@@ -27,6 +31,8 @@ const allComponents = {
     AuditType : AuditType,
     InternalAudit : InternalAudit,
     ExternalAudit : ExternalAudit
+    ,Debit : Debit,
+    Credit : Credit
 };
 
 class MasterClass extends Component {
@@ -48,7 +54,6 @@ class MasterClass extends Component {
         for(let i = 0; i < this.state.list.length; i++) {
             if (this.state.list[i].tab === componentdisplayname) {
                 indexNumber = i;
-                alert(indexNumber);
                 break;
             }
         }
@@ -103,12 +108,11 @@ class MasterClass extends Component {
 
     componentWillReceiveProps=(props)=>{
      let splitedQueryString=this.props.history.location.pathname.split('/');
+     console.log(props);
      if(splitedQueryString.length>=2){
         let tabDisplayName= splitedQueryString[1].replace("_", " ");
-        console.log(splitedQueryString);
         var lastIdx = splitedQueryString[splitedQueryString.length-1];
         var hasUpdateId =!isNaN(parseInt(lastIdx)) ; 
-        console.log(lastIdx);
         if(hasUpdateId){
             this.addTab(splitedQueryString[1],tabDisplayName, splitedQueryString[2])
         }else{
@@ -130,10 +134,10 @@ class MasterClass extends Component {
          return (
             <div>
             <Header />
-            <BasicSidebar addTabFromSideBar={this.addTab} />
+            <Sidebar addTabFromSideBar={this.addTab} />
             <div className="kt-mainpanel">
                     <CloseableTabs data={this.state.list}  onCloseTab={(id, newIndex) => {this.closeTab(id,newIndex)}}
-                    activeIndex={this.state.activeIndex}
+                    activeIndex={this.state.activeIndex} tabPanelColor='#486b7d' mainClassName = "closable-tab-wrapper" tabPanelClass = "closable-tab" tabContentClass = "closable-tab-content-panel"
                     />
             </div>
             <Footer />
