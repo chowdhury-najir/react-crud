@@ -49,56 +49,43 @@ class MasterClass extends Component {
      }
     }
 
-    addTab=(componentname,componentdisplayname, editcomponentid)=>{
+    addTab=(componentName,tabName)=>{
         let indexNumber = 0;
+
         for(let i = 0; i < this.state.list.length; i++) {
-            if (this.state.list[i].tab === componentdisplayname) {
+            if (this.state.list[i].tab === tabName) {
                 indexNumber = i;
                 break;
             }
         }
 
         if(indexNumber>0)
-        {         
-            var DynamicallyChooseComponent = allComponents[componentname];
-            const id = new Date().valueOf();
-            const tabAfterFilter=
-            {
-                tab: componentdisplayname,
-                    component:  <DynamicallyChooseComponent closeTabFromComponent={this.closeTab} 
-                    editcomponentid={editcomponentid} tabId={id} />,
-                    id: id,
-                    closeable: true
-            };
-
-            const newItems = [...this.state.list];
-            for(let j = 0; j < newItems.length; j++) {
-                if (newItems[j].tab === componentdisplayname) {
-                    newItems[j]=tabAfterFilter
-                }
-            }
-
+        {  
+            //tab already exist in the state's tab list
+            //just change the active index to the currently clicked tab  
             this.setState({
-                list: newItems,
+                list: this.state.list,
                 activeIndex: indexNumber
             });
         }
        
-        else {
-            this.addTabCoreFunction(componentname,componentdisplayname, editcomponentid)
+        else 
+        {
+            //tab doesnot exist in the tab list.
+            //creating a new tab
+            this.createTab(componentName,tabName)
         }
     }
 
  
 
-    addTabCoreFunction=(componentname,componentdisplayname, editcomponentid)=>{
+    createTab=(componentName,tabName)=>{
         const id = new Date().valueOf();
-        var DynamicallyChooseComponent = allComponents[componentname];
+        var ClickedTabComponent = allComponents[componentName];
         this.setState({
             list: this.state.list.concat({
-            tab: componentdisplayname,
-            component:  <DynamicallyChooseComponent closeTabFromComponent={this.closeTab} 
-            editcomponentid={editcomponentid} tabId={id} />,
+            tab: tabName,
+            component:  <ClickedTabComponent />,
             id: id,
             closeable: true
         }),
@@ -106,24 +93,28 @@ class MasterClass extends Component {
         });
     }
 
-    componentWillReceiveProps=(props)=>{
-     let splitedQueryString=this.props.history.location.pathname.split('/');
-     console.log(props);
-     if(splitedQueryString.length>=2){
-        let tabDisplayName= splitedQueryString[1].replace("_", " ");
-        var lastIdx = splitedQueryString[splitedQueryString.length-1];
-        var hasUpdateId =!isNaN(parseInt(lastIdx)) ; 
-        if(hasUpdateId){
-            this.addTab(splitedQueryString[1],tabDisplayName, splitedQueryString[2])
-        }else{
-            this.addTab(lastIdx,lastIdx, lastIdx)
-        }  
-     }
+    componentWillReceiveProps = (props) => {
+
+        let splitedQueryString = this.props.history.location.pathname.split('/');
+        if (splitedQueryString.length >= 2) {
+            let tabDisplayName = splitedQueryString[1].replace("_", " ");
+            var lastIdx = splitedQueryString[splitedQueryString.length - 1];  //tabDisplayName = lastIdx
+            var hasUpdateId = !isNaN(parseInt(lastIdx));
+
+            if (hasUpdateId) {
+                this.addTab(splitedQueryString[1], tabDisplayName);
+            } else {
+                this.addTab(tabDisplayName, tabDisplayName);
+            }
+        }
     }
+
     closeTab=(tabidfromcomponent,newIndex)=>{
+
         let currentIndex=this.state.list.findIndex(item => item.id === tabidfromcomponent);
         let previousIndex=currentIndex-1;
         previousIndex=previousIndex<0?0:previousIndex;
+
         this.setState({
             list: this.state.list.filter(item => item.id !== tabidfromcomponent),
             activeIndex:  previousIndex
@@ -134,7 +125,7 @@ class MasterClass extends Component {
          return (
             <div>
             <Header />
-            <Sidebar addTabFromSideBar={this.addTab} />
+            <Sidebar  />
             <div className="kt-mainpanel">
                     <CloseableTabs data={this.state.list}  onCloseTab={(id, newIndex) => {this.closeTab(id,newIndex)}}
                     activeIndex={this.state.activeIndex} tabPanelColor='#486b7d' mainClassName = "closable-tab-wrapper" tabPanelClass = "closable-tab" tabContentClass = "closable-tab-content-panel"
