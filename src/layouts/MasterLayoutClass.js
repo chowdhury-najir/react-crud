@@ -14,11 +14,10 @@ import ExternalAudit from "../components/ExternalAudit";
 import InternalAudit from "../components/InternalAudit";
 import Debit from "../components/Debit";
 import Credit from "../components/Credit";
-
-
-
-
 import Sidebar from './partials/Sidebar'
+
+
+
 
 
 

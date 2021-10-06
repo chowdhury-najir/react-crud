@@ -5,7 +5,7 @@ import React from "react";
 
     return (
 
-      <div class="kt-mainpanel">
+      <>
         <div class="kt-pagetitle">
           <h5>Credit</h5>
         </div>
@@ -13,8 +13,9 @@ import React from "react";
         <div class="kt-pagebody">
           Credit : 10000 tk
         </div>
+      </>
 
-      </div>
+      
     );
 };
 export default Credit;

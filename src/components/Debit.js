@@ -3,16 +3,15 @@ import React from "react";
 
     return (
 
-        <div class="kt-mainpanel">
-  <div class="kt-pagetitle">
-    <h5>Credit</h5>
-  </div>
+      <>
+      <div class="kt-pagetitle">
+        <h5>Debit</h5>
+      </div>
 
-  <div class="kt-pagebody">
-    Debit : 10000 tk
-  </div>
-
-</div>
+      <div class="kt-pagebody">
+        Debit : 10000 tk
+      </div>
+    </>
     );
 };
 export default Debit;

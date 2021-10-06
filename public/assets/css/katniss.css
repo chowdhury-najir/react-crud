@@ -12127,7 +12127,17 @@ textarea.parsley-success:focus {
   color: #868e96;
   position: relative;
 }
-/* my custom css */
+/* start my custom css for sidebar styling */
+.kt-sideleft-menu > .nav-item > .nav-link.with-sub.child-with-subchild{
+  padding-left: 20px;
+}
+
+ul.nav.nav-sub-sub.kt-sideleft-menu{
+  padding-left: 15px;
+
+}
+
+/* end my custom styling for sidebar styling*/
 
 
 
@@ -12433,7 +12443,7 @@ div.closable-tab {
   left: auto;
   width: 100%;
   /* Full width */
-  z-index: 50;
+  z-index: 1;
 
 }
 div.closable-tab-wrapper{
@@ -12444,7 +12454,7 @@ div.closable-tab-content-panel {
   margin-top: 5%;
   overflow: auto;
   position: relative;
-  z-index: 0;
+
 }
 
 /* end closable tab styling */
