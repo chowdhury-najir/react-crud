@@ -1,5 +1,5 @@
-import React, { Component,useState,useEffect } from 'react'
-import { Route, Redirect } from 'react-router-dom'
+import React, { Component,useState } from 'react'
+import { Route } from 'react-router-dom'
 import Header from './partials/Header'
 import Footer from './partials/Footer'
 import CloseableTabs from 'react-closeable-tabs'

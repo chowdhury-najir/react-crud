@@ -102,8 +102,8 @@ export const data = [
 
 export const listToTreeConverter = function listToTree(menus) {
     let parentMenus;
-    parentMenus = menus.filter((x) => x.ParentId == "0");
-    for (var i = 0; i < parentMenus.length; i++) {
+    parentMenus = menus.filter((x) => x.ParentId === 0);
+    for (let i = 0; i < parentMenus.length; i++) {
       let childMenus;
       
       childMenus = menus.filter(
@@ -111,7 +111,7 @@ export const listToTreeConverter = function listToTree(menus) {
       );
       parentMenus[i].childMenus = childMenus;
     
-      for (var j = 0; j<childMenus.length;j++){
+      for (let j = 0; j<childMenus.length;j++){
        let subChildMenus = menus.filter(
             (x) => x.ParentId === childMenus[j].id
           );

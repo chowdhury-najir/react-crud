@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, BrowserRouter as Router, Switch, Redirect, } from "react-router-dom";
+import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
 import Dashboard from "./components/Dashboard"
 import FormLayouts from "./components/FormLayouts"
@@ -18,10 +18,8 @@ import MasterLayoutRoute from "./layouts/MasterLayoutClass";
 
 
 
-const Routes = (props) => (
+const Routes = () => (
   <Router>
-    
-    
     <Switch>
     <MasterLayoutRoute exact path = "/" component = {Dashboard} />
       <MasterLayoutRoute exact path = "/FormLayouts" component = {FormLayouts} />
@@ -49,9 +47,7 @@ const Routes = (props) => (
     </Route> */}
 
     </Switch>
-
-    
-    </Router>
+</Router>
 );
 export default Routes;
 
