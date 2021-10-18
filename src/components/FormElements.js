@@ -17,11 +17,13 @@ function  FormElements(){
   useEffect(() => {
     const name = localStorage.getItem("firstName");
     const email = localStorage.getItem("email");
+   
 
     setState({
       firstName: name,
       email: email
     });
+    console.log("useeffect got hit");
 
   }, [])
 

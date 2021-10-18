@@ -16,11 +16,6 @@ import Debit from "../components/Debit";
 import Credit from "../components/Credit";
 import Sidebar from './partials/Sidebar'
 
-
-
-
-
-
 const allComponents = {
     Cards : Cards,
     FormElements : FormElements,
@@ -75,8 +70,6 @@ class MasterClass extends Component {
             this.createTab(componentName,tabName)
         }
     }
-
- 
 
     createTab=(componentName,tabName)=>{
         const id = new Date().valueOf();
@@ -139,10 +132,10 @@ class MasterClass extends Component {
 const MasterLayoutRoute = ({ component: Component, ...rest }) => {
     return (
         <Route {...rest} render={matchProps =>
-             (
+                (
                 <MasterClass {...matchProps} />
-            ) 
-        }
+                ) 
+            }
         />
 
     )

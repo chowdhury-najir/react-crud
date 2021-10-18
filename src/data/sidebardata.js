@@ -1,7 +1,8 @@
-export const data = [
+export let sidebardata = [
     {
         id: 1, name: "Forms",
         url: "/FormElements",
+        icon : "icon ion-paper-airplane",
         ParentId: 0
     },
     {
@@ -12,6 +13,7 @@ export const data = [
     {
         id: 3, name: "Form Layouts",
         url: "/FormLayouts",
+        icon : "icon ion-clipboard",
         ParentId: 1
     },
     {
@@ -23,12 +25,15 @@ export const data = [
       id: 5,
       name: "Audit",
       url : "/Audit",
+      icon : "icon ion-clock",
       ParentId : 0
     },
     {
         id: 6,
         name: "Audit Type",
         url : "/AuditType",
+        icon : "icon ion-ios-gear-outline"
+        ,
         ParentId : 5
     },
     {
@@ -53,12 +58,14 @@ export const data = [
         id: 10,
         name: "Accounts",
         url: "/Accounts",
+        icon : "ion-android-list",
         ParentId: 0
     },
     {
         id: 11,
         name: "income",
         url: "/income",
+        icon: "icon cash-outline",
         ParentId: 10
     },
     {
@@ -83,6 +90,7 @@ export const data = [
         id: 15,
         name: "Security",
         url: "/Cards",
+        icon : "icon ion-android-lock",
         ParentId: 0
     },
     {
@@ -98,33 +106,3 @@ export const data = [
         ParentId: 15
     }
 ];
-
-
-export const listToTreeConverter = function listToTree(menus) {
-    let parentMenus;
-    parentMenus = menus.filter((x) => x.ParentId === 0);
-    for (let i = 0; i < parentMenus.length; i++) {
-      let childMenus;
-      
-      childMenus = menus.filter(
-        (x) => x.ParentId === parentMenus[i].id
-      );
-      parentMenus[i].childMenus = childMenus;
-    
-      for (let j = 0; j<childMenus.length;j++){
-       let subChildMenus = menus.filter(
-            (x) => x.ParentId === childMenus[j].id
-          );
-          if(subChildMenus.length >=1){
-            parentMenus[i].childMenus[j].subChildMenus = subChildMenus;
-          }
-          
-      }
-     
-    }
-    return parentMenus;
-  }
-
-  //const data  = list_to_tree(sidebarData);
-  
-  
