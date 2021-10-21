@@ -12,9 +12,9 @@ import React, { Component } from 'react'
           
           <div className="kt-pagebody">
             <div className = "card">
-            <h4>This is Dashboard Content</h4>
+            <h4>SanctionList</h4>
             <p>
-              React js
+              All the sanctions are here
             </p>
           </div>
           </div>

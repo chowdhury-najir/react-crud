@@ -4,29 +4,16 @@ import Header from './partials/Header'
 import Footer from './partials/Footer'
 import CloseableTabs from 'react-closeable-tabs'
 import Dashboard from '../components/Dashboard'
-import Cards from '../components/Cards'
-import FormElements from '../components/FormElements'
-import FormLayouts from '../components/FormLayouts'
-import Audit from "../components/Audit";
-import AuditHistory from "../components/AuditHistory";
-import AuditType from "../components/AuditType";
-import ExternalAudit from "../components/ExternalAudit";
-import InternalAudit from "../components/InternalAudit";
-import Debit from "../components/Debit";
-import Credit from "../components/Credit";
+import AddCorporateSanction from "../components/AddCorporateSanction"
+import AddIndividualSanction from "../components/AddIndividualSanction"
+import SanctionList from '../components/ViewSanctionList'
+
 import Sidebar from './partials/Sidebar'
 
 const allComponents = {
-    Cards : Cards,
-    FormElements : FormElements,
-    FormLayouts : FormLayouts,
-    Audit : Audit,
-    AuditHistory : AuditHistory,
-    AuditType : AuditType,
-    InternalAudit : InternalAudit,
-    ExternalAudit : ExternalAudit
-    ,Debit : Debit,
-    Credit : Credit
+    AddIndividualSanction : AddIndividualSanction,
+    AddCorporateSanction : AddCorporateSanction,
+    SanctionList :  SanctionList
 };
 
 class MasterClass extends Component {

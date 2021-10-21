@@ -40,6 +40,7 @@ const Sidebar = () => {
                                             child.subChildMenus.map((subChild) => (
                                                 <li className="nav-item" key={subChild.id}>
                                                     <Link to={subChild.url} className="nav-link " >
+                                                    <i className={subChild.icon}></i>
                                                         {subChild.name}
                                                     </Link>
                                                 </li>
@@ -48,6 +49,7 @@ const Sidebar = () => {
                                 </li> :
                                 <li className="nav-item" key={child.id}>
                                     <Link to={child.url} className="nav-link " >
+                                    <i className={child.icon}></i>
                                         {child.name}
                                     </Link>
                                 </li>
