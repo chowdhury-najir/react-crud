@@ -3,14 +3,17 @@
 //     const response = await api.get("/sanctions");
 //     return response.data;
 //   };
-import api from "../api/common-http";
+import Axios from "axios";
+import { SERVER_URL } from "../utils/ServerUrl";
+//import api from "../api/common-http";
 class SanctionService{
+    
    async   addSanctionHandler (sanction) {
         const request = {
           ...sanction,
         };
         try {
-            var response = await api.post("create-sanction-list", request);
+            var response = await Axios.post(SERVER_URL + "create-sanction-list",request);
             
             if(response.data=== 1) {
                 console.log("adding sanction data");
