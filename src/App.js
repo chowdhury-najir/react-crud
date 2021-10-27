@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import SanctionPage from "./pages/SanctionPage"
 import SanctionTypePage from "./pages/SanctionTypePage";
 import AddSanction from "./components/Sanction/AddSanction";
+import SanctionList from "./components/Sanction/SanctionList";
 function App() {
   return (
     <Router>
@@ -20,15 +21,23 @@ function App() {
         {/* <Route exact path="/AddIndividualSanction"  >
           <HomePage />
         </Route> */}
-        {/* <Route exact path="/sanction-type-list" component={SanctionTypePage} /> */}
+        <Route exact path="/sanction-type-list" component={SanctionTypePage} />
 
         <Route
         exact
             path="/AddIndividualSanction"
             render={(props) => (
-              <AddSanction {...props}  />
+              <AddSanction {...props} name= "IndividualSanction" />
             )}
           />
+
+        <Route exact path="/AddCorporateSanction"
+            render={(props) => (
+                <AddSanction {...props} name= "Corporate Sanction"  />
+              )}
+        />
+
+      <Route exact path="/SanctionList" component={SanctionList} />
       </Switch>
       <Footer />
     </Router>

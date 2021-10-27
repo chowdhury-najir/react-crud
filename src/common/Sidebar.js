@@ -14,7 +14,7 @@ const Sidebar = () => {
         []);
 
     return (
-        <div class="kt-sideleft">
+        <div className="kt-sideleft">
             <ul className="nav kt-sideleft-menu">
 
                 {navData.map((tab) => (

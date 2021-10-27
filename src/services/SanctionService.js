@@ -5,20 +5,23 @@
 //   };
 import api from "../api/common-http";
 class SanctionService{
-   async  addSanctionHandler (sanction) {
+   async   addSanctionHandler (sanction) {
         const request = {
           ...sanction,
         };
         try {
             var response = await api.post("create-sanction-list", request);
-            if(response == 1) {
+            
+            if(response.data=== 1) {
                 console.log("adding sanction data");
-                console.log(response);
+                //alert("Upload Successfull!");
+                return response.data;
             }
             
         } catch (error) {
+            
             console.log(error);
-            throw error;
+            return 0;
         }
        // setSanctions([...sanctions, response.data]);
     };
