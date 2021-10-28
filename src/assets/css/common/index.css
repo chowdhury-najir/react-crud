@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.navStyle {
+  background-color: rgb(6, 60, 129);
+  font-size: 15pt;
+  /* font-weight: bold; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navPadding {
+  padding-right: 25px;
+}
+
+.customCSS {
+  position: sticky;
+}
+
+.sticky-top {
+  z-index: 1000;
+}
+
+.footer-copyright {
+  margin: 380px -15px 0 -15px;
+  background-color: rgb(6, 60, 129);
+  color: white;
+  text-align: center;
+  padding: 35px 10px 35px 0;
+  position: relative;
+  left: 0;
+  bottom: 0;
+
+  -moz-box-shadow: 3px 3px 5px 6px rgb(105, 189, 238);
+  -webkit-box-shadow: 3px 3px 5px 6px rgb(105, 189, 238);
+  box-shadow: 3px 3px 5px 6px rgb(105, 189, 238);
+}
+
+.sanctionCard {
+  margin-top: 35px;
+}
